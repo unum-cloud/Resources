@@ -25,6 +25,9 @@ Suggested for everyone wishing to join the team!
 
 ## Data Science
 
+* 📜 [Parallelism strategies for training large Neural Networks](https://openai.com/blog/techniques-for-training-large-neural-networks/) blog by OpenAI
+* 📜 [Semantic search with embeddings](https://rom1504.medium.com/semantic-search-with-embeddings-index-anything-8fb18556443c) blog by Romain Beaumont  - googler, Laion5B dataset and open_clip contributor
+
 ## Benchmarking
 
 * :octocat: [C++ Benchmarking Tutorial](https://github.com/ashvardanian/BenchmarkingTutorial) for Google toolchain: `std::rand`, `std::execution`
