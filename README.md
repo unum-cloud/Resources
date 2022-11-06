@@ -46,3 +46,7 @@ Suggested for everyone wishing to join the team!
 ## Language Bindings
 
 * :octocat: [Foreign Function Interface Overheads](https://github.com/dyu/ffi-overhead)
+
+## DevOps
+
+* 📜 [Common Applications of k8s](https://blog.adamchalmers.com/kubernetes-problems/)
