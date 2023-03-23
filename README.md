@@ -1,7 +1,7 @@
 # Awesome
 
 Hereby we present a list of awesome resources and blogs on topics related to Unum!
-Suggested for everyone wishing to join the team!
+Suggested for everyone wishing to join the core Unum team or contribute to our Open-Source projects!
 
 * :octocat: means source code
 * :tv: means video channels
@@ -9,15 +9,18 @@ Suggested for everyone wishing to join the team!
 * 📖 means complete books
 * 🇷🇺 implies content is in Russian
 
+
 ## Learning Python
 
 * :octocat: [WTF Python](https://github.com/satwikkansal/wtfpython): Understanding Python through surprising snippets..
 * :tv: [mCoding](https://www.youtube.com/c/mCodingWithJamesMurphy) by James Murphy.
 * 📖 [Python Design Patterns](https://python-patterns.guide/) by Brandon Rhodes.
+* Our [Python Coding Guidelines](/GuidePython)
 
 ## Learning C++
 
 * :tv: 🇷🇺 [MIPT Course in Basic C++](https://youtube.com/playlist?list=PL3BR09unfgciJ1_K_E914nohpiOiHnpsK)
+* Our [C++ Coding Guidelines](/GuideCpp)
 
 ## Data Structures
 
