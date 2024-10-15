@@ -85,7 +85,7 @@ PointerAlignment: Left
 ```
 
 The remaining parameters are optional.
-Here is a much more detailed config in project [UKV](https://github.com/unum-cloud/ukv/blob/main/.clang-format).
+Here is a much more detailed config in project [UStore](https://github.com/unum-cloud/ustore/blob/main/.clang-format).
 
 ### Project Directory Structure
 

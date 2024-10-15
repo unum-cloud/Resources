@@ -190,7 +190,108 @@ So unless a GPL-licensed project is an **optional** add-on, our projects can't i
 > [A dev’s guide to open source software licensing](https://github.com/readme/guides/open-source-licensing) by GitHub.
 > [Software Licenses in Plain English](https://www.tldrlegal.com/).
 
-## Code
+## Code Style
+
+Following points are true for all programming and markup languages:
 
 - No trailing whitespaces.
 - Every file must end with newline.
+- Avoid short variable names in big functions.
+- Self-documenting code is better than excessive commenting.
+- Use automatic formatters, like `clang-format` for C++ and `black` for Python.
+
+Commenting is a broad topic and everyone has their own style, but here are some good practices and anti-patterns.
+
+### Self Explanatory Comments
+
+The most common mistake novice developers make is using too much boilerplate text, repeating what the code already says.
+
+```c
+long f(int n){if(n==0)return 1;else return n*f(n-1);}
+int main(){int n;scanf("%d",&n);printf("%ld",f(n));return 0;}
+```
+```c
+// Function to compute factorial
+long f(int n) {
+    // If n equals zero
+    if (n == 0)
+        // Return 1 because factorial of 0 is 1
+        return 1;
+    else
+        // Else return n multiplied by factorial of (n-1)
+        return n * f(n - 1);
+}
+
+// Main function
+int main() {
+    int n; // Variable to store user input
+    scanf("%d", &n); // Read integer from user
+    printf("%ld", f(n)); // Print factorial of n
+    return 0; // Return 0 to indicate successful execution
+}
+```
+```c
+// This function calculates the factorial of a number
+long factorial(int number) {
+    if (number == 0)
+        return 1; // Return 1 if number is zero
+    else
+        return number * factorial(number - 1); // Recursive call
+}
+
+// The main function where execution starts
+int main() {
+    int input; // Variable to hold user input
+    scanf("%d", &input); // Read input from user
+    printf("%ld", factorial(input)); // Output the factorial
+    return 0; // Successful execution
+}
+```
+```c
+long factorial(int number) {
+    if (number == 0) return 1;
+    return number * factorial(number - 1);
+}
+int main() {
+    int input;
+    scanf("%d", &input);
+    printf("%ld", factorial(input));
+    return 0;
+}
+```
+
+Fewer words is better.
+
+### Dead Code
+
+Oftentimes you may encounter large sections of code temporarily disabled, commented out.
+There is a common and a clean way to do that:
+
+```c
+//    start_of_very_long_code_line_
+//that_was_wrapped_after_commenting();
+//    next_function_call();
+```
+
+Alternatively, you can use the preprocessor:
+
+```c
+#if 0
+    start_of_very_long_code_line_that_was_wrapped_after_commenting();
+    next_function_call();
+#endif
+```
+
+The benefit of the later approach, it doesn't screw up your formatting, doesn't affect the Git history of the block, and is easy to turn back on by flipping the zero.
+It also makes searching for dead code sections much easier.
+
+### Color Coding
+
+Several commenting conventions exist, using different line prefixes:
+
+- `#!` in Python or `//!` in C/C++ for important comments.
+- `#?` in Python or `//?` in C/C++ for future considerations.
+- `#` in Python or `//` in in C/C++ for general inline comments.
+- `/** */` in C/C++ for symbol doc-strings.
+- `/* */` in C/C++ for multi-line block comments.
+- `TODO:` line prefixes for tasks.
