@@ -1,1 +1,0 @@
-# Code Guidelines for Python
