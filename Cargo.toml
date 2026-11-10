@@ -1,0 +1,40 @@
+[package]
+authors = ["Ash Vardanian <1983160+ashvardanian@users.noreply.github.com>"]
+categories = ["command-line-utilities", "development-tools::profiling", "hardware-support"]
+description = "Measured instruction latencies and throughputs per chip, and the binary that measures them"
+edition = "2021"
+rust-version = "1.100"
+keywords = ["latency", "throughput", "simd", "assembly", "benchmark"]
+license = "Apache-2.0"
+name = "resources"
+publish = false
+readme = "README.md"
+repository = "https://github.com/unum-cloud/Resources"
+version = "0.1.0"
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] } # CLI argument parsing
+libc = "0.2"                                      # Core pinning, `sysctlbyname` and the tile permission syscall
+
+[profile.release]
+codegen-units = 1 # Better optimization, slower compile
+lto = true        # Link-time optimization
+opt-level = 3     # Maximum optimization
+
+[[bin]]
+name = "measure"
+path = "measure.rs"
+
+# Static checks for the shapes that tend to re-grow: deep nesting, bool soup, eager collection,
+# and needless copies. Enforced by `.githooks/pre-commit`.
+[lints.clippy]
+cognitive_complexity = "deny"      # deep nesting and tangled conditionals
+too_many_arguments = "deny"        # a missing config struct
+fn_params_excessive_bools = "deny" # a bool that should name its states
+needless_collect = "deny"          # materializing what a lazy iterator would serve
+redundant_clone = "deny"
+unnecessary_to_owned = "deny"
+inefficient_to_string = "deny"
+large_stack_arrays = "deny"
+too_many_lines = "warn"
+needless_pass_by_value = "warn"

@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Subjects read `<Verb>: <Capitalized summary>`, and messages carry no AI-assistant attribution.
+set -u
+payload=$(grep -v '^#' "$1")
+subject=$(printf '%s\n' "$payload" | grep -vE '^[[:space:]]*$' | head -1)
+failed=0
+case "$subject" in
+Merge*) ;;
+*)
+    if ! printf '%s\n' "$subject" | grep -qE '^(Add|Break|Chore|Docs|Fix|Improve|Make|Release): [A-Z]'; then
+        echo "commit-msg: the subject must be '<Verb>: <Capitalized summary>' with Add, Break, Chore, Docs, Fix, Improve, Make or Release."
+        echo "            Got: ${subject:-<empty>}"
+        failed=1
+    fi
+    ;;
+esac
+if printf '%s\n' "$payload" | grep -iqE 'co-authored-by:.*(bot|claude|gpt|openai|copilot|gemini|cursor)|generated (with|by)|anthropic|openai\.com|claude\.ai|🤖'; then
+    echo "commit-msg: the message carries AI-assistant attribution."
+    failed=1
+fi
+exit "$failed"

@@ -1,0 +1,11 @@
+mnemonic,form,input_type,output_type,core,mode,latency_cycles,throughput_cycles,nanoseconds,reference,reference_cycles,rounds,intrinsics,uops,ports
+ADD,"z.s, z.s, z.s",i32,i32,Super,streaming,2.880,0.933,0.2486,add z.s,2.870,3,,,
+FMLA,"z.s, p/m, z.s, z.s",f32,f32,Super,streaming,8.183,3.887,0.2413,add z.s,2.870,3,,,
+FMLA,"z.h, p/m, z.h, z.h",f16,f16,Super,streaming,8.179,3.881,0.2415,add z.s,2.870,3,,,
+UDOT,"z.s, z.b, z.b",u8,u32,Super,streaming,8.261,3.885,0.2408,add z.s,2.870,2,,,
+TBL,"z.b, {z.b}, z.b",u8,u8,Super,streaming,2.880,0.933,0.2486,add z.s,2.870,3,,,
+ADD,"z.s, z.s, z.s",i32,i32,Performance,streaming,2.742,0.860,0.8359,add z.s,2.723,3,,,
+FMLA,"z.s, p/m, z.s, z.s",f32,f32,Performance,streaming,8.491,3.759,0.7771,add z.s,2.723,3,,,
+FMLA,"z.h, p/m, z.h, z.h",f16,f16,Performance,streaming,8.476,3.758,0.7790,add z.s,2.723,4,,,
+UDOT,"z.s, z.b, z.b",u8,u32,Performance,streaming,8.461,3.770,0.7789,add z.s,2.723,3,,,
+TBL,"z.b, {z.b}, z.b",u8,u8,Performance,streaming,2.742,0.861,0.8359,add z.s,2.723,3,,,

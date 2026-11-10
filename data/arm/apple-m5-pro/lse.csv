@@ -1,0 +1,5 @@
+mnemonic,form,input_type,output_type,core,mode,latency_cycles,throughput_cycles,nanoseconds,reference,reference_cycles,rounds,intrinsics,uops,ports
+LDADDAL,"x, x, [x]",u64,u64,Super,standard,6.728,2.500,0.2335,add x,1.000,11,,,
+CASAL,"x, x, [x]",u64,u64,Super,standard,16.023,3.006,0.2335,add x,1.000,3,,,
+LDADDAL,"x, x, [x]",u64,u64,Performance,standard,7.025,2.497,0.6153,add x,1.000,16,,,
+CASAL,"x, x, [x]",u64,u64,Performance,standard,16.058,3.010,0.7429,add x,1.000,6,,,

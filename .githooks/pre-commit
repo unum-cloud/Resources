@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Formatting and lints before a commit; each formatter runs only when it and its config are installed.
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+cargo fmt --check
+if command -v taplo > /dev/null 2>&1 && [ -f .taplo.toml ]; then
+    taplo fmt --check Cargo.toml rust-toolchain.toml .taplo.toml
+fi
+cargo clippy --locked --all-targets -- -D warnings

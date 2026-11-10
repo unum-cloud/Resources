@@ -1,0 +1,9 @@
+# TOML formatting for `Cargo.toml` and `rust-toolchain.toml`, checked by `.githooks/pre-commit` when taplo is installed.
+[formatting]
+align_comments = true       # → Column-align trailing `#` comments within each block
+align_entries = false       # → Do not align the `=` signs, only the comments
+reorder_keys = false        # → Preserve authored key order
+array_auto_expand = false   # → Never explode an inline array across lines
+array_auto_collapse = false # → Never collapse a hand-expanded array
+column_width = 120          # → The wrap the Rust sources use
+indent_string = "  "        # → Two spaces

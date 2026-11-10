@@ -1,0 +1,12 @@
+mnemonic,form,input_type,output_type,core,mode,latency_cycles,throughput_cycles,nanoseconds,reference,reference_cycles,rounds,intrinsics,uops,ports
+CMPXCHG,"lock m32, r32",u32,u32,Raptor Cove,standard,19.104,19.085,0.1852,add r64,1.000,3,,,
+CMPXCHG,"lock m64, r64",u64,u64,Raptor Cove,standard,19.228,19.081,0.1854,add r64,1.000,3,,,
+MFENCE,"",,,Raptor Cove,standard,,38.011,0.1853,add r64,1.000,5,,,
+OR,"lock m32, r32",u32,u32,Raptor Cove,standard,17.983,18.037,0.1854,add r64,1.000,3,,,
+OR,"lock m64, r64",u64,u64,Raptor Cove,standard,17.989,18.091,0.1851,add r64,1.000,3,,,
+PAUSE,"",,,Raptor Cove,standard,,166.720,0.1855,add r64,1.000,2,_mm_pause,,
+UMONITOR,"r64",,,Raptor Cove,standard,,396.573,0.1854,add r64,1.000,3,_umonitor,,
+XADD,"lock m32, r32",u32,u32,Raptor Cove,standard,18.039,18.048,0.1853,add r64,1.000,4,,,
+XADD,"lock m64, r64",u64,u64,Raptor Cove,standard,18.066,18.107,0.1855,add r64,1.000,3,,,
+XCHG,"m32, r32",u32,u32,Raptor Cove,standard,17.099,17.100,0.1853,add r64,1.000,2,,,
+XCHG,"m64, r64",u64,u64,Raptor Cove,standard,17.092,16.914,0.1855,add r64,1.000,3,,,
